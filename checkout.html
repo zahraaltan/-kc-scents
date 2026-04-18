@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   html, body{
+     overflow-x: hidden;
+     width: 100%;
+    }
+    a{
+        color: rgb(161, 122, 38);
+        
+    }
+    .container{
+        width: 100%;
+        min-height: 100vh;
+        background-color: honeydew;
+        display: flex;
+        flex-direction: row;
+    }
+    .left{
+        height: auto;
+        width: 40%;
+        padding: 1rem;
+        background-color: rgb(253, 218, 173);
+    }
+    .card{
+        height: auto;
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;        
+    }
+    .card img{
+        height: 70px;
+        width: 70px;
+    }
+    #order-total{
+       color: burlywood;
+    }
+    .rightinfo{
+        height: auto;
+        width: 60%;
+        padding: 1rem;       
+    }
+    .form-group{
+         display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    .checkout-input{
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgb(161, 122, 38);
+        border-radius: 5px;
+        outline: none;
+        margin: 0.5px;
+    }
+    .checkout-label{
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .submit-btn{
+        width: 100%;
+        padding: 2rem 3rem;
+        margin: auto;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(177, 128, 63);
+        cursor: pointer;
+        color: white;
+        font-size: 1.2rem;
+    }
+    .submit-btn:hover{
+        background-color: rgb(109, 81, 19);
+        color: white;
+    }
+    h2{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: rgb(161, 122, 38);
+    }
+    .expiry-cvv-group{
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        gap: 1rem;
+    }
+    .error{
+        font-size: 0.9rem;
+        color: red;
+    }
+    #success-msg{
+        background-color: rgb(252, 229, 180);
+        border: 2px solid rgb(109, 81, 19);
+        border-radius: 15px;
+        color: white;
+        display: none;
+        margin: 0.8rem;
+        padding: 1rem;
+        font-size: 1rem;
+        width: 40%;
+        height: 10%;
+    }
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .rightinfo{
+        width: 100%;
+    }
+}
+
+</style>
+<body>
+    <div class="navbar">
+            <img src="logo.png" alt="" class="logo">
+            <nav><a href="index.html">ℌ𝔬𝔪𝔢</a></nav>
+            <nav><a href="about.html">𝔄𝔟𝔬𝔲𝔱</a></nav>
+            <nav><a href="contact.html">ℭ𝔬𝔫𝔱𝔞𝔠𝔱</a></nav>
+            <nav><a href="shop.html">𝔰𝔥𝔬𝔭</a></nav>
+            <nav><a href="cart.html">ℭ𝔞𝔯𝔱</a></nav>
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <h1>ORDER INFORMATION</h1>
+           <div id="order-items"></div>
+            <h2>total items are: <span id="total-item" ></span></h2>
+            <h1>total amount is : <span id="totalamount"></span></h1>
+        </div>
+        <div class="rightinfo">
+            <div id="success-msg"><h2>order placed successfully!!</h2></div>
+                <form id="checkout-form">
+                <section class="contact">
+                    <h2>contact Information</h2>
+                    <div class="form-group">
+                        <label class="checkout-label">name:</label>
+                        <input id="name" class="checkout-input" type="text" placeholder="name">
+                        <span id="name-error" class="error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-label">email:</label>
+                        <input id="email" class="checkout-input" type="email" placeholder="email">
+                        <span id="email-error" class="error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-label">phone:</label>
+                        <input id="phone" class="checkout-input" type="tel" placeholder="phone">
+                        <span id="phone-error" class="error"></span>
+                    </div>
+                </section>
+                <section class="shipping">
+                    <h2>shipping Details</h2>
+                    <div class="form-group">
+                        <label class="checkout-label">address</label>
+                        <input type="text" class="checkout-input" placeholder="address">
+                    </div>
+
+                    <div class="form-group">
+                         <label class="checkout-label">city:</label>
+                    <input class="checkout-input" type="text" placeholder="city">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-label">postal code:</label>
+                    <input class="checkout-input" type="text" placeholder="postal code">
+                    </div>  
+                </section>
+                <section class="payment">
+                    <h2>payment Details</h2>
+                    <div class="form-group">
+                        <label class="checkout-label">card number:</label>
+                        <input class="checkout-input" type="text" placeholder="card number">
+                    </div>
+                    <div class="form-group expiry-cvv-group">
+                        <label class="checkout-label">expiry and CVV:</label>
+                        <input class="checkout-input" type="text" placeholder="MM/YY">
+                        <input class="checkout-input" type="text" placeholder="CVV">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkout-label">cardholder name:</label>
+                        <input class="checkout-input" type="text" placeholder="cardholder name">
+                    </div> 
+                </section>
+                <input type="submit" class="submit-btn" id="submit">
+            </form>
+        </div>
+    </div>
+    <script>
+    let order =JSON.parse(localStorage.getItem('cart')) || []
+    function cartItemsinfo() {
+            const orderItems =document.getElementById("order-items")
+
+            if (order.length === 0) {
+                orderItems.innerHTML = "<p style='text-align:center; font-size:1.2rem;'>Your cart is empty.</p>";
+                document.getElementById('total-item').textContent = 0;
+                document.getElementById('totalamount').textContent = "PKR 0";
+                return;
+            }
+
+            let total = 0;
+            let totalItems = 0;
+
+            for (const item of order) {
+                total += item.price * item.quantity;
+                totalItems += item.quantity;
+
+                let card = document.createElement('div');
+                card.className = "card";
+                card.innerHTML = `
+                    <img class="image" src="${item.image}" alt="${item.name}"
+                         onerror="this.src='logo.png'">
+                    <h2 class="name">${item.name}</h2>
+                    <p>PKR ${item.price.toLocaleString()}</p>
+                    <div style="display:flex; align-items:center; justify-content:center;">
+                        <span>${item.quantity}</span>
+                    </div>
+                `;
+                orderItems.appendChild(card);
+            }
+
+            document.getElementById('total-item').textContent = totalItems;
+            document.getElementById('totalamount').textContent = "PKR " + total.toLocaleString();
+        }
+        cartItemsinfo()
+    let checkoutForm = document.getElementById("checkout-form")
+    let submitBtn = document.getElementById("submit")
+    checkoutForm.addEventListener("submit",(event)=>{
+        event.preventDefault()
+        let name = document.getElementById("name").value.trim()
+        let email = document.getElementById("email").value.trim()
+        let phone = document.getElementById("phone").value.trim()
+        let nameError = document.getElementById("name-error")
+        let emailError = document.getElementById("email-error")
+        let phoneError = document.getElementById("phone-error")
+        const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^\d{10}$/;
+        let isValid = true
+        if(name == ""){
+            nameError.textContent = "please enter your full name"
+            isValid = false
+        }else{
+            nameError.textContent = ""
+        }
+        if(email == "" || !emailregex.test(email)){
+            emailError.textContent = "please enter a valid email (e.g. name@example.com)"
+            isValid = false
+        }else{
+            emailError.textContent = ""
+        }
+        if(phone == "" || !phoneRegex.test(phone)){
+            phoneError.textContent = "please enter a valid 10-digit phone number"
+            isValid = false
+        }else{
+            phoneError.textContent = ""
+        }
+        if(isValid){
+            document.querySelector(".left").style.display = "none"
+            document.getElementById("checkout-form").style.display = "none"
+            document.getElementById("success-msg").style.display = "block"
+            localStorage.removeItem('cart')
+        }
+    })
+    
+    </script>
+</body>
+</html>

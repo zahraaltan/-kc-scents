@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{
+        background-color: rgb(226, 193, 153);
+    }
+    a{
+        color: rgb(117, 85, 14);
+    }
+    select{
+        margin: 1rem;
+        border: 2px solid rgb(53, 30, 3);
+    }
+</style>
+<body>
+    <div class="navbar">
+            <img src="logo.png" alt="" class="logo">
+            <nav><a href="index.html">ℌ𝔬𝔪𝔢</a></nav>
+            <nav><a href="about.html">𝔄𝔟𝔬𝔲𝔱</a></nav>
+            <nav><a href="contact.html">ℭ𝔬𝔫𝔱𝔞𝔠𝔱</a></nav>
+            <nav><a href="shop.html">𝔰𝔥𝔬𝔭</a></nav>
+            <nav><a href="cart.html">ℭ𝔞𝔯𝔱</a></nav>
+    </div>
+    <select id="sortSelect" onchange="sortItems()">
+            <option value="az">A to Z</option>
+            <option value="za">Z to A</option>
+            <option value="lowHigh">Price: Low to High</option>
+            <option value="highLow">Price: High to Low</option>
+        </select>
+    <div class="scents">
+        
+            <div class="card">
+                <img class="image" src="kcs1.webp" alt="">
+                <h2 class="name">Noir Velours</h2>
+                <p>ORIENTAL · WOODY · SMOKY</p>
+                <h3 class="price" data-price="7500">PKR 7,500</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Noir Velours', 7500, 'kcs1.webp', this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs2.webp" alt="">
+                <h2 class="name">Rose Soleil</h2>
+                <p>FLORAL · FRUITY · RADIANT</p>
+                <h3 class="price" data-price="6800">PKR 6,800</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);"  onclick="addToCart('Rose Soleil', 6800, 'kcs2.webp', this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs3.png" alt="">
+                <h2 class="name">Cedre Blanc</h2>
+                <p>WOODY · FRESH · AROMATIC</p>
+                <h3 class="price"  data-price="8200">PKR 8,200</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Cedre Blanc', 8200, 'kcs3.png', this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs4.png" alt="">
+                <h2 class="name">Or Brun</h2>
+                <p>SPICY · AMBER · GOURMAND</p>
+                <h3 class="price"  data-price="9500">PKR 9,500</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Or Brun', 9500, 'kcs4.png', this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs5.png" alt="">
+                <h2 class="name">Brume Marine</h2>
+                <p>AQUATIC · OZONIC · DRIFTWOOD</p>
+                <h3 class="price"  data-price="7200">PKR 7,200</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Brume Marine', 7200, 'kcs5.png', this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs6.png" alt="">
+                <h2 class="name">Jasmin Doré</h2>
+                <p>FLORAL · SPICY · GOURMAND</p>
+                <h3 class="price"  data-price= "11000">PKR 11,000</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Jasmin Doré', 11000, 'kcs6.png', this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kcs7.png" alt="">
+                <h2 class="name">Musc Poudré</h2>
+                <p>MUSKY · POWDERY · SOFT</p>
+                <h3 class="price"  data-price="6500">PKR 6,500</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Musc Poudré', 6500, 'kcs7.png' ,this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc1.webp" alt="">
+                <h2 class="name">Badr Al Oud</h2>
+                <p>بدر العود — Full Moon Oud</p>
+                <h3 class="price" data-price="4200">PKR 4,200</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Badr Al Oud', 4200, 'kc1.webp',this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc2.webp" alt="">
+                <h2 class="name">Leilani Rose</h2>
+                <p>ليلاني — Heavenly Flower</p>
+                <h3 class="price" data-price="3600">PKR 3,600</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Leilani Rose', 3600, 'kc2.webp', this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc3.webp" alt="">
+                <h2 class="name">Rimal Al Dhahab</h2>
+                <p>رمال الذهب — Golden Sands</p>
+                <h3 class="price" data-price="3900">PKR 3,900</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Rimal Al Dhahab', 3900, 'kc3.webp', this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc4.webp" alt="">
+                <h2 class="name">Sama Al Bahr</h2>
+                <p>سماء البحر — Sky of the Sea</p>
+                <h3 class="price" data-price="3400">PKR 3,400</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Sama Al Bahr', 3400, 'kc4.webp',this) ">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc5.webp" alt="">
+                <h2 class="name">Yuki</h2>
+                <p>雪 — First Snow</p>
+                <h3 class="price" data-price="3750">PKR 3,750</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14);" onclick="addToCart('Yuki', 3750, 'kc5.webp', this)">Add to cart</button>
+            </div>
+            <div class="card">
+                <img class="image" src="kc6.webp" alt="">
+                <h2 class="name">Laila Neon</h2>
+                <p>ليلى نيون — Night of Neon</p>
+                <h3 class="price" data-price="4600">PKR 4,600</h3>
+                <button class="addToCart" style="margin: 0.2rem; border: 2px solid rgb(117, 85, 14); " onclick="addToCart('Laila Neon', 4600, 'kc6.webp', this) ">Add to cart</button>
+            </div>
+    </div>
+      <section class="footer">
+        <div class="fot">
+            <h1 style="padding: 3rem;">𝔗𝔥𝔢 𝔄𝔯𝔱 𝔒𝔣 𝔓𝔢𝔯𝔣𝔲𝔪𝔢</h1>
+            <p style="font-size: 1.5rem; text-align: center; font-family: sans-serif;">join our exclusive newsletter for the latest in luxuary fashion fragrances</p>
+            <input type="email" placeholder=" enter your email">
+            <img style="display: block; margin-left: auto; margin-right: auto; " class="logo" src="logo.png" alt="">
+        </div>
+    </section>
+    <script>
+   function addToCart(name, price, image, btn) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, image, quantity: 1 });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  btn.innerHTML = "Added ✓";
+  setTimeout(() => {
+    btn.innerHTML = "Add to Cart";
+    btn.disabled = false;
+}, 2000);
+btn.disabled = true; 
+}
+      function sortItems() {
+  const list = document.getElementsByClassName('scents')[0]; // 👈 fix [0]
+  const items = Array.from(list.getElementsByClassName('card'));
+  const sortType = document.getElementById('sortSelect').value;
+
+  items.sort((a, b) => {
+    const nameA = a.querySelector('.name').textContent.toLowerCase(); // 👈 compare names only
+    const nameB = b.querySelector('.name').textContent.toLowerCase();
+    const priceA = parseFloat(a.querySelector('.price').getAttribute('data-price'));
+    const priceB = parseFloat(b.querySelector('.price').getAttribute('data-price'));
+
+    switch (sortType) {
+      case 'az': return nameA.localeCompare(nameB);
+      case 'za': return nameB.localeCompare(nameA);
+      case 'lowHigh': return priceA - priceB;
+      case 'highLow': return priceB - priceA;
+      default: return 0;
+    }
+  });
+
+  items.forEach(item => list.appendChild(item));
+}
+
+    </script>
+</body>
+</html>

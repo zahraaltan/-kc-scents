@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ <style>
+    body{
+        background-color: rgb(201, 162, 79);
+    }
+    .navbar a{
+        color: rgb(114, 82, 14);
+
+    }
+    .container{
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .conleft{
+        background-image: url(con1.png);
+        background-position: center;
+        background-size: contain;
+        min-height: 80vh;
+        width: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        margin: 0.5rem;  
+    }
+    .conright{
+        height: 80vh;
+        width: 60%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        margin: 2rem;
+    }
+    .contact{
+        height: 60vh;
+        width: inherit;
+        border-radius: 15px;
+        border: 2px solid rgb(114, 82, 14);
+    }
+    h4{
+        margin: 0.5rem;
+    }
+    input{
+        margin: 0.5rem;
+    }
+    textarea{
+        background-color: transparent;
+        border: 2px solid rgb(114, 82, 14);
+        margin: 0.5rem;
+    }
+@media (max-width: 1125px) {
+    .continer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .conleft{
+        display: none;
+    }
+    .conright{
+         height: 100vh;
+        width: 80%;
+    }
+    button{
+        display: block;
+        margin: 1rem auto;
+    }
+}
+@media (max-width: 549px) {
+    textarea{
+        width: 90%;
+    }
+}
+    
+ </style>
+<body>
+     <div class="navbar">
+            <img src="logo.png" alt="" class="logo">
+            <nav><a href="index.html">ℌ𝔬𝔪𝔢</a></nav>
+            <nav><a href="about.html">𝔄𝔟𝔬𝔲𝔱</a></nav>
+            <nav><a href="contact.html">ℭ𝔬𝔫𝔱𝔞𝔠𝔱</a></nav>
+            <nav><a href="shop.html">𝔰𝔥𝔬𝔭</a></nav>
+            <nav><a href="cart.html">ℭ𝔞𝔯𝔱</a></nav>
+
+    </div>
+    <div class="container">
+        <div class="conleft"></div>
+        <div class="conright">
+            <h1>ℭ𝔬𝔫𝔱𝔞𝔠𝔱 𝔘𝔰</h1>
+            <div class="contact">
+               <h4>name</h4>
+               <input type="text" placeholder="name">
+               <h4>email</h4>
+               <input type="text" placeholder="email">
+               <h4>message</h4>
+               <textarea cols="45" rows="5"></textarea> <br>
+               <button style="border: 2px solid rgb(114, 82, 14); margin-left: 7rem; ">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

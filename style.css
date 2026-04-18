@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    
+}
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: rgb(253, 226, 155);
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+    color: rgb(255, 232, 174);
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.back-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(3px);
+  transform: scale(1.1);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.logo{
+    height: 8rem;
+    width: 10rem;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.navbar{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+nav{
+    justify-content: space-between;
+    margin: 1rem;
+    font-size: 25px;
+}
+.center{
+    width: 500px;
+    margin: auto;
+text-align: center;
+    height: 200px;
+    background-color: transparent;
+    font-size: 40px;
+    color: white;
+}
+span{
+    font-size: 42px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    color: rgb(168, 137, 57);
+    
+}
+.shopnow{
+    display: block;
+margin: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: rgb(161, 134, 64);
+    border-radius: 5px;
+    font-style: italic;
+    font-weight: bold;
+}
+.shopnow:hover{
+    background-color: rgb(192, 158, 94);
+    cursor: pointer;
+}
+.main{
+    color: rgb(65, 50, 12);
+    align-items: center;
+    background-color: rgb(194, 177, 134);
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+.scents{
+    display: flex;
+    flex-wrap: wrap;
+     align-items: center;
+    justify-content: center;
+}
+.card{
+    height: 28rem;
+    width: 18rem;
+    margin: 2rem;
+    background-color: rgb(255, 232, 174);
+    border-radius: 9px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.image{
+    height: 19rem;
+    width: 14rem;
+    background-size: cover;
+    background-position: center;
+}
+.about{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    background-color: rgb(255, 232, 174);
+    border-bottom: 2px solid rgb(65, 50, 12);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.left{
+    width: 90%;
+    height: inherit;
+}
+.right{
+    width: 50%;
+    height: inherit;
+    background-image: url(bg.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+button{
+    border: 2px solid rgb(255, 232, 174);
+     border-radius: 5px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 15px 30px;
+    display: block;
+    margin: 1rem auto;
+}
+button:hover{
+   background-color: burlywood;
+   transform: translateY(-5px);
+   scale: (1.1);
+}
+.footer{
+    width: 100%;
+    height: 55vh;
+    background-color: rgb(255, 232, 174);
+    color: rgb(65, 50, 12);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+input{
+    border: 2px solid rgb(65, 50, 12);
+    height: 2rem;
+    width: 20rem;
+    background: transparent;
+    margin-top: 2rem;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    body{
+    overflow-x: hidden;
+}
+    .center{
+        width: 90%;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+    .logo{
+        height: 100px;
+        width: 100px;
+    }
+    input{
+    width: 80%;
+    display: block;
+    margin: 2rem auto;
+    }
+    .about{
+         height: auto;
+         padding: 2rem;
+    }
+    button{
+    display: block;
+    margin: 1rem auto;
+    }
+}
